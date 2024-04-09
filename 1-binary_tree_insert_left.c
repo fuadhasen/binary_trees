@@ -25,13 +25,9 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	if (parent->left != NULL)
 	{
 		temp = parent->left;
-		temp->parent = new;
 		new->left = temp;
-		parent->left = new;
+		temp->parent = new;
 	}
-	else
-	{
-		parent->left = new;
-	}
+	parent->left = new;
 	return (new);
 }
